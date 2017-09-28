@@ -93,6 +93,5 @@ ePie = function(dat, namevar=NULL, datavar=NULL, size = NULL,  type=c("pie", "ro
 	 add theme dependencies
 	chart = addThemeDependencies(chart)
 	chart
-	return(opt)
 }
 
