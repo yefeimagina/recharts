@@ -106,7 +106,7 @@ a$series[[1]]$label$emphasis$textStyle$fontWeight = 'bold'
 	chart = htmlwidgets::createWidget(
 		'echarts', a, width = size[1], height = size[2], package = 'recharts'
 	)
-	chart = .addClass(chart, "ePie")
+	chart = .addClass(chart, "ringppt")
 	# add theme dependencies
 	chart = addThemeDependencies(chart)
 	chart
