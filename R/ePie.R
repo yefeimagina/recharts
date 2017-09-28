@@ -93,7 +93,19 @@ ePie = function(dat, namevar=NULL, datavar=NULL, size = NULL,  type=c("pie", "ro
 	chart = addThemeDependencies(chart)
 	chart
 	}else{
-		return(opt)
+		a = opt
+		for(i in 1:6)
+{
+  a$legend$data[[i]][1] = paste0(a$series[[1]]$data[[i]]$name,":",a$series[[1]]$data[[i]]$value)
+}
+for(i in 1:6)
+{
+  a$series[[1]]$data[[i]]$name = paste0(a$series[[1]]$data[[i]]$name,":",a$series[[1]]$data[[i]]$value)
+}
+
+chart = htmlwidgets::createWidget(
+'echarts', a, width = a$size[1], height = a$size[2], package = 'recharts')
+chart
 	}
 }
 
