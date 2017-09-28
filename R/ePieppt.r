@@ -4,7 +4,7 @@ ePie = function(dat, namevar=NULL, datavar=NULL, size = NULL,  type=c("pie", "ro
 	toolbox = TRUE, toolbox.orient = "horizontal", toolbox.x = "right", toolbox.y = "top", 
 	dataView = TRUE, readOnly = FALSE, mark=TRUE, dataZoom=FALSE, magicType=FALSE,
 	tooltip = TRUE, tooltip.trigger="item", formatter="", axis.scale=TRUE,
-	xlab=FALSE, ylab=FALSE,	calculable=TRUE, showLabel=TRUE, opt = list(),rad1 = 20,rad2 = 100)
+	xlab=FALSE, ylab=FALSE,	calculable=TRUE, showLabel=TRUE, opt = list(),rad1 = 20,rad2 = 100,lel = 6)
 {
 	type <- match.arg(type)
 	roseType <- match.arg(roseType)
@@ -83,7 +83,11 @@ ePie = function(dat, namevar=NULL, datavar=NULL, size = NULL,  type=c("pie", "ro
 	#jsonStr <- toJSON(opt, pretty=TRUE)
 	#outList <- .rechartsOutput(jsonStr, charttype="ePie", size=size)
 	opt$size = size
-	
+	for(i in 1:lel)
+{
+ opt$series[[1]]$data[[i]]$name = paste0(opt$series[[1]]$data[[i]]$name," : ",opt$series[[1]]$data[[i]]$value)
+}
+
 	### output list format
 	chart = htmlwidgets::createWidget(
 		'echarts', opt, width = size[1], height = size[2], package = 'recharts'
