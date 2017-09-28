@@ -84,9 +84,28 @@ ePie = function(dat, namevar=NULL, datavar=NULL, size = NULL,  type=c("pie", "ro
 	#outList <- .rechartsOutput(jsonStr, charttype="ePie", size=size)
 	opt$size = size
 	
+
+for(i in 1:6)
+{
+  a$series[[1]]$data[[i]]$name = paste0(a$series[[1]]$data[[i]]$name," : ",a$series[[1]]$data[[i]]$value)
+}
+
+
+a$series[[1]]$label = list()
+a$series[[1]]$label$normal= list()
+a$series[[1]]$label$normal$show = TRUE
+a$series[[1]]$label$normal$position = 'center'
+a$series[[1]]$label$normal$formatter = c(1,1)
+
+
+a$series[[1]]$emphasis = list()
+a$series[[1]]$label$emphasis$show = TRUE
+a$series[[1]]$label$emphasis$textStyle = list()
+a$series[[1]]$label$emphasis$textStyle$fontSize = 30
+a$series[[1]]$label$emphasis$textStyle$fontWeight = 'bold'
 	### output list format
 	chart = htmlwidgets::createWidget(
-		'echarts', opt, width = size[1], height = size[2], package = 'recharts'
+		'echarts', a, width = size[1], height = size[2], package = 'recharts'
 	)
 	chart = .addClass(chart, "ePie")
 	# add theme dependencies
