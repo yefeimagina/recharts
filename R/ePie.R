@@ -37,7 +37,10 @@ ePie = function(dat, namevar=NULL, datavar=NULL, size = NULL,  type=c("pie", "ro
 	}
 	if(showformatter)
 	{
-		showF = dat$namevar
+		showF =  function(e){
+                          return(e.name + " : " +  e.percent + "%")
+                        }
+
 	}
 
 	# option$title format.
