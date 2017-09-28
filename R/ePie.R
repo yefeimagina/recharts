@@ -5,7 +5,7 @@ ePie = function(dat, namevar=NULL, datavar=NULL, size = NULL,  type=c("pie", "ro
 	toolbox = TRUE, toolbox.orient = "horizontal", toolbox.x = "right", toolbox.y = "top", 
 	dataView = TRUE, readOnly = FALSE, mark=TRUE, dataZoom=FALSE, magicType=FALSE,
 	tooltip = TRUE, tooltip.trigger="item", formatter="", axis.scale=TRUE,
-	xlab=FALSE, ylab=FALSE,	calculable=TRUE, showLabel=TRUE, opt = list(),re1 = 20,re2 = 100,showformatter = F)
+	xlab=FALSE, ylab=FALSE,	calculable=TRUE, showLabel=TRUE, opt = list(),re1 = 20,re2 = 100,showformatter = F,showF="")
 {
 	type <- match.arg(type)
 	roseType <- match.arg(roseType)
