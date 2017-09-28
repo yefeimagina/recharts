@@ -9,8 +9,6 @@ ePie = function(dat, namevar=NULL, datavar=NULL, size = NULL,  type=c("pie", "ro
 {
 	type <- match.arg(type)
 	roseType <- match.arg(roseType)
-	print(type)
-	print(roseType)
 	# if the input is an array or a vector, will use the names as the pie name,
 	# and use the value as the pie value
 	if(is.vector(dat) || is.array(dat)){
@@ -55,12 +53,6 @@ ePie = function(dat, namevar=NULL, datavar=NULL, size = NULL,  type=c("pie", "ro
 
 				
 	opt$legend = legendSet( show=legend, data=dat[[namevar]], legend.x=legend.x, legend.y=legend.y, orient=legend.orient)
-	print("title:")
-	print(opt$title)
-	print(opt$calculable)
-	print(opt$tooltip)
-	print(opt$toolbox)
-	
 	
 	datFrame = data.frame(value=dat[[datavar]], name=dat[[namevar]])
     datList = lapply(split(datFrame, seq_len(nrow(datFrame))), as.list)
@@ -101,6 +93,5 @@ ePie = function(dat, namevar=NULL, datavar=NULL, size = NULL,  type=c("pie", "ro
 	# add theme dependencies
 	chart = addThemeDependencies(chart)
 	chart
-	return(opt)
 }
 
