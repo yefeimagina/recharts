@@ -109,9 +109,7 @@ a$series[[1]]$label$emphasis$textStyle = list()
 a$series[[1]]$label$emphasis$textStyle$fontSize = 30
 a$series[[1]]$label$emphasis$textStyle$fontWeight = 'bold'
 
-chart = htmlwidgets::createWidget(
-'echarts', a, width = a$size[1], height = a$size[2], package = 'recharts')
-chart
+return(a)
 	}
 }
 
