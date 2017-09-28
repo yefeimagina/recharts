@@ -38,7 +38,7 @@ ePie = function(dat, namevar=NULL, datavar=NULL, size = NULL,  type=c("pie", "ro
 	if(showformatter)
 	{
 		showF =  function(e){
-                          return(e.name + " : " +  e.percent + "%")
+                          return(e.dat + " : " +  e.namevar + "%")
                         }
 
 	}
