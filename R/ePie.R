@@ -4,7 +4,7 @@ ePie = function(dat, namevar=NULL, datavar=NULL, size = NULL,  type=c("pie", "ro
 	toolbox = TRUE, toolbox.orient = "horizontal", toolbox.x = "right", toolbox.y = "top", 
 	dataView = TRUE, readOnly = FALSE, mark=TRUE, dataZoom=FALSE, magicType=FALSE,
 	tooltip = TRUE, tooltip.trigger="item", formatter="", axis.scale=TRUE,
-	xlab=FALSE, ylab=FALSE,	calculable=TRUE, showLabel=TRUE, opt = list(),re1 = 20,re2 = 100,ty = 1)
+	xlab=FALSE, ylab=FALSE,	calculable=TRUE, showLabel=TRUE, opt = list(),re1 = 20,re2 = 100,ty = 1,char = "{a} :{b}")
 {
 	type <- match.arg(type)
 	roseType <- match.arg(roseType)
@@ -94,20 +94,13 @@ ePie = function(dat, namevar=NULL, datavar=NULL, size = NULL,  type=c("pie", "ro
 	chart
 	}else{
 		a = opt
-		for(i in 1:6)
-{
-  a$legend$data[[i]][1] = paste0(a$series[[1]]$data[[i]]$name,":",a$series[[1]]$data[[i]]$value)
-}
-for(i in 1:6)
-{
-  a$series[[1]]$data[[i]]$name = paste0(a$series[[1]]$data[[i]]$name,":",a$series[[1]]$data[[i]]$value)
-}
+		
 		
 a$series[[1]]$label = list()
 a$series[[1]]$label$normal= list()
 a$series[[1]]$label$normal$show = TRUE
 a$series[[1]]$label$normal$position = 'center'
-a$series[[1]]$label$normal$formatter = c(1,1)
+a$series[[1]]$label$normal$formatter = char
 
 
 a$series[[1]]$emphasis = list()
