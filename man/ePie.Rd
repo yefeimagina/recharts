@@ -13,6 +13,7 @@ ePie = function(dat, namevar=NULL, datavar=NULL, size = NULL,reset_radius = c(20
 	tooltip = TRUE, tooltip.trigger="item", formatter="", axis.scale=TRUE,
 	xlab=FALSE, ylab=FALSE,	calculable=TRUE, showLabel=TRUE, opt = list())
 }
+
 \arguments{
 \item{dat}{a data object (a data frame or a factor array)}
 
