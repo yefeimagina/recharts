@@ -102,7 +102,7 @@ ePie = function(dat, namevar=NULL, datavar=NULL, size = NULL,reset_radius = c(20
 	toolbox = TRUE, toolbox.orient = "horizontal", toolbox.x = "right", toolbox.y = "top", 
 	dataView = TRUE, readOnly = FALSE, mark=TRUE, dataZoom=FALSE, magicType=FALSE,
 	tooltip = TRUE, tooltip.trigger="item", formatter="", axis.scale=TRUE,
-	xlab=FALSE, ylab=FALSE,	calculable=TRUE, showLabel=TRUE, opt = list())
+	xlab=FALSE, ylab=FALSE,	calculable=TRUE, showLabel=TRUE, opt = list(),usedefine = list())
 {
 	type <- match.arg(type)
 	roseType <- match.arg(roseType)
@@ -209,7 +209,17 @@ ePie = function(dat, namevar=NULL, datavar=NULL, size = NULL,reset_radius = c(20
 	opt$size = size
 	
 	### output list format
-	return(opt)
+	if(!is.null(unlist(usedefine)))
+	{
+		for(i in 1:length(usedefine[[1]]))
+	        phase = paste0("opt$",usedefine$label,"=",usedefine$value)
+                eval(parse(text = phase))
+	}
+	chart = htmlwidgets::createWidget(
+  		'echarts', opt, width = size[1], height = size[2], package = 'recharts'
+  )
+chart = .addClass(chart, "ePie")
+chart
 }
 
 
