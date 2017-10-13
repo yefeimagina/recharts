@@ -219,7 +219,7 @@ ePie = function(dat, namevar=NULL, datavar=NULL, size = NULL,reset_radius = c(20
   		'echarts', opt, width = size[1], height = size[2], package = 'recharts'
   )
 chart = .addClass(chart, "ePie")
-chart
+return(list(c = chart,l = opt))
 }
 
 
