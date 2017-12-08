@@ -20,7 +20,7 @@ ePie(dat, namevar=NULL, datavar=NULL, size = NULL,reset_radius = c(20,100),reset
 to that class):  the pie name of the given data.frame colnames, e.g. 
 \code{namevar = ~pieName};  namevar only needed for the 
 data.frame data input.}
-
+	
 \item{datavar}{an "formula" object: Associates the value of variable
 with symbol color, e.g. \code{datavar = ~valueName}.}
 	
@@ -32,10 +32,7 @@ or percentage could be accepted): e.g. size = c(1024, 768).}
   
 \item{reset_radius}{an objects of radius range of the graph,which has default value:c(20,100),
 you can modify the specific range of radius by setting the vector.}
-  
-\item{reset_center}{an objects of the position of the graph,you 
-can modify the specific range of radius by setting the vector.}
-  
+
 \item{showL}{logitcal ,if T the data infomation should be shown in the middle of the graph,otherwise the 
 middle of the graph should be empty.}
  
