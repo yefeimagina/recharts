@@ -33,8 +33,8 @@ or percentage could be accepted): e.g. size = c(1024, 768).}
 \item{reset_radius}{an objects of radius range of the graph,which has default value:c(20,100),
 you can modify the specific range of radius by setting the vector.}
   
-\item{reset_center}{an objects of the position of the graph,which has default valye:c("50%",200),
-you can modify the specific range of radius by setting the vector.}
+\item{reset_center}{an objects of the position of the graph,you 
+can modify the specific range of radius by setting the vector.}
   
 \item{showL}{logitcal ,if T the data infomation should be shown in the middle of the graph,otherwise the 
 middle of the graph should be empty.}
@@ -130,14 +130,6 @@ numeric array with name, using the JavaScript library ECharts3.
 You are recommended to use lazyPlot function for interactive chart
   option set through "shiny" server.
 }
-\examples{
-x = runif(6)
-names(x) = LETTERS[1:6]
-ePie(x) + eTitle("test")
-testData <- head(mapTestData_chs, 5)
-ePie(testData, ~stdName, ~val1)
-}
-
 \examples{
 x = runif(6)
 names(x) = LETTERS[1:6]
