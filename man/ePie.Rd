@@ -24,6 +24,9 @@ data.frame data input.}
 
 \item{datavar}{an "formula" object: Associates the value of variable
 with symbol color, e.g. \code{datavar = ~valueName}.}
+	
+\item{reset_radius}{an objects of radius range of the graph,which has default value:c(20,100),
+you can modify the specific range of radius by setting the vector:reset_radius = c(a,b).}
 
 \item{size}{an array of html widget width and height(either numeric pixels 
 or percentage could be accepted): e.g. size = c(1024, 768).}
@@ -137,3 +140,8 @@ testData <- head(mapTestData_chs, 5)
 ePie(testData, ~stdName, ~val1)
 }
 
+\examples{
+x = runif(6)
+names(x) = LETTERS[1:6]
+ePie(x,reset_radius = c(80,120),showL = T,char = "{b}:{c}",definenam = T,myname = "detailgraph") 
+}
