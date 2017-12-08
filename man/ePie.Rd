@@ -4,14 +4,16 @@
 \alias{ePie}
 \title{Create an HTML pie charts widget using the ECharts(version:3.2.2) library}
 \usage{
-ePie(dat, namevar=NULL, datavar=NULL, size = NULL,reset_radius = c(20,100),reset_center= c("50%",200),
-	showL=FALSE,char = "",definenam = FALSE,myname = "",type=c("pie", "rose"), roseType=c("radias", "area"),
-	theme = "default", title = NULL, subtitle = NULL, title.x = "center", title.y = "top", 
-	legend = TRUE, legend.x = "left", legend.y= "top", legend.orient="horizontal", 
-	toolbox = TRUE, toolbox.orient = "horizontal", toolbox.x = "right", toolbox.y = "top", 
-	dataView = TRUE, readOnly = FALSE, mark=TRUE, dataZoom=FALSE, magicType=FALSE,
-	tooltip = TRUE, tooltip.trigger="item", formatter="", axis.scale=TRUE,
-	xlab=FALSE, ylab=FALSE,	calculable=TRUE, showLabel=TRUE, opt = list())
+ePie(dat, namevar = NULL, datavar = NULL, size = NULL, type = c("pie",
+  "rose"), roseType = c("radias", "area"), theme = "default",
+  title = NULL, subtitle = NULL, title.x = "center", title.y = "top",
+  legend = TRUE, legend.x = "left", legend.y = "top",
+  legend.orient = "horizontal", toolbox = TRUE,
+  toolbox.orient = "horizontal", toolbox.x = "right", toolbox.y = "top",
+  dataView = TRUE, readOnly = FALSE, mark = TRUE, dataZoom = FALSE,
+  magicType = FALSE, tooltip = TRUE, tooltip.trigger = "item",
+  formatter = "", axis.scale = TRUE, xlab = FALSE, ylab = FALSE,
+  calculable = TRUE, showLabel = TRUE, opt = list())
 }
 \arguments{
 \item{dat}{a data object (a data frame or a factor array)}
@@ -20,29 +22,12 @@ ePie(dat, namevar=NULL, datavar=NULL, size = NULL,reset_radius = c(20,100),reset
 to that class):  the pie name of the given data.frame colnames, e.g. 
 \code{namevar = ~pieName};  namevar only needed for the 
 data.frame data input.}
-	
+
 \item{datavar}{an "formula" object: Associates the value of variable
 with symbol color, e.g. \code{datavar = ~valueName}.}
-	
-\item{reset_radius}{an objects of radius range of the graph,which has default value:c(20,100),
-you can modify the specific range of radius by setting the vector.}
 
 \item{size}{an array of html widget width and height(either numeric pixels 
 or percentage could be accepted): e.g. size = c(1024, 768).}
-  
-\item{reset_radius}{an objects of radius range of the graph,which has default value:c(20,100),
-you can modify the specific range of radius by setting the vector.}
-
-\item{showL}{logitcal ,if T the data infomation should be shown in the middle of the graph,otherwise the 
-middle of the graph should be empty.}
- 
-\item{char}{an character object to control the specific content shown in the middle of the graph,
-the useful value only can be single character,a number,vector or other unuseful input will
-end up with default output.}
-
-\item{definenam}{ logical whether use you own name to replace the default name:pie chart}
-
-\item{myname}{ object of you own name,if the param definenam is T,you can rename the garph by :myname = "my new name".}
 
 \item{type}{an option of c("pie", "rose"), the pie type of diplay widgets.}
 
@@ -130,5 +115,7 @@ You are recommended to use lazyPlot function for interactive chart
 \examples{
 x = runif(6)
 names(x) = LETTERS[1:6]
-ePie(x,reset_radius = c(80,120)) 
+ePie(x) + eTitle("test")
+testData <- head(mapTestData_chs, 5)
+ePie(testData, ~stdName, ~val1)
 }
