@@ -5,7 +5,7 @@
 \title{Create an HTML pie charts widget using the ECharts(version:3.2.2) library}
 \usage{
 ePie(dat, namevar = NULL, datavar = NULL, size = NULL, type = c("pie",
-  "rose"), roseType = c("radias", "area"), theme = "default",
+  "rose"), roseType = c("radias", "area"), theme = "default",reset_center = NULL,
   title = NULL, subtitle = NULL, title.x = "center", title.y = "top",
   legend = TRUE, legend.x = "left", legend.y = "top",
   legend.orient = "horizontal", toolbox = TRUE,
@@ -29,6 +29,8 @@ with symbol color, e.g. \code{datavar = ~valueName}.}
 \item{size}{an array of html widget width and height(either numeric pixels 
 or percentage could be accepted): e.g. size = c(1024, 768).}
 
+\item{reset_center}{para to adjust picture center.}
+  
 \item{type}{an option of c("pie", "rose"), the pie type of diplay widgets.}
 
 \item{roseType}{if the pie chart type is rose, this option will be available.
