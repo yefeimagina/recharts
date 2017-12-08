@@ -4,7 +4,7 @@
 \alias{ePie}
 \title{Create an HTML pie charts widget using the ECharts(version:3.2.2) library}
 \usage{
-ePie = function(dat, namevar=NULL, datavar=NULL, size = NULL,reset_radius = c(20,100),reset_center= c("50%",200),
+ePie(dat, namevar=NULL, datavar=NULL, size = NULL,reset_radius = c(20,100),reset_center= c("50%",200),
 	showL=FALSE,char = "",definenam = FALSE,myname = "",type=c("pie", "rose"), roseType=c("radias", "area"),
 	theme = "default", title = NULL, subtitle = NULL, title.x = "center", title.y = "top", 
 	legend = TRUE, legend.x = "left", legend.y= "top", legend.orient="horizontal", 
@@ -13,7 +13,6 @@ ePie = function(dat, namevar=NULL, datavar=NULL, size = NULL,reset_radius = c(20
 	tooltip = TRUE, tooltip.trigger="item", formatter="", axis.scale=TRUE,
 	xlab=FALSE, ylab=FALSE,	calculable=TRUE, showLabel=TRUE, opt = list())
 }
-
 \arguments{
 \item{dat}{a data object (a data frame or a factor array)}
 
@@ -26,24 +25,23 @@ data.frame data input.}
 with symbol color, e.g. \code{datavar = ~valueName}.}
 	
 \item{reset_radius}{an objects of radius range of the graph,which has default value:c(20,100),
-you can modify the specific range of radius by setting the vector:reset_radius = c(a,b).}
+you can modify the specific range of radius by setting the vector.}
 
 \item{size}{an array of html widget width and height(either numeric pixels 
 or percentage could be accepted): e.g. size = c(1024, 768).}
   
 \item{reset_radius}{an objects of radius range of the graph,which has default value:c(20,100),
-you can modify the specific range of radius by setting the vector:reset_radius = c(a,b).}
+you can modify the specific range of radius by setting the vector.}
   
 \item{reset_center}{an objects of the position of the graph,which has default valye:c("50%",200),
-you can modify the specific range of radius by setting the vector such aas:reset_center = c("40",150).}
+you can modify the specific range of radius by setting the vector.}
   
 \item{showL}{logitcal ,if T the data infomation should be shown in the middle of the graph,otherwise the 
 middle of the graph should be empty.}
  
 \item{char}{an character object to control the specific content shown in the middle of the graph,
 the useful value only can be single character,a number,vector or other unuseful input will
-end up with default output: data$name,or you can use the Echarts expression:
-char = "{b}:{c}" (details in http://echarts.baidu.com/)}
+end up with default output.}
 
 \item{definenam}{ logical whether use you own name to replace the default name:pie chart}
 
