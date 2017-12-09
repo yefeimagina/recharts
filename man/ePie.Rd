@@ -29,8 +29,7 @@ with symbol color, e.g. \code{datavar = ~valueName}.}
 \item{reset_radius}{an objects of radius range of the graph,which has default value:c(20,100),
 you can modify the specific range of radius by setting the vector, e.g. \code{reset_radius = c(a,b)}.}
   
-\item{reset_center}{an objects of the position of the graph,which has default valye:c("50%",200),
-you can modify the specific range of radius by setting the vector, e.g. \code{reset_center = c("40%",150)}.}
+\item{reset_center}{an objects of the position of the graph.}
 
 \item{size}{an array of html widget width and height(either numeric pixels 
 or percentage could be accepted): e.g. size = c(1024, 768).}
