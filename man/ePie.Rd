@@ -5,7 +5,7 @@
 \title{Create an HTML pie charts widget using the ECharts(version:3.2.2) library}
 \usage{
 ePie(dat, namevar = NULL, datavar = NULL, reset_radius = c(20,100),
-     reset_center,size = NULL, type = c("pie",
+     reset_center,labelformatter = NULL,size = NULL, type = c("pie",
   "rose"), roseType = c("radias", "area"), theme = "default",
   title = NULL, subtitle = NULL, title.x = "center", title.y = "top",
   legend = TRUE, legend.x = "left", legend.y = "top",
@@ -32,6 +32,8 @@ you can modify the specific range of radius by setting the vector, e.g. \code{re
   
 \item{reset_center}{an objects of the position of the graph.}
 
+\item{labelformatter}{an character object to control the specific content shown in the middle of 
+the graph, e.g. \code{labelformatter = "{b}:{c}"}.}
 \item{size}{an array of html widget width and height(either numeric pixels 
 or percentage could be accepted): e.g. size = c(1024, 768).}
 
