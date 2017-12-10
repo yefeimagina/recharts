@@ -15,13 +15,6 @@
 #'   you can modify the specific range of radius by setting the vector such aas:reset_center = c("40",150).
 #' @param showL logitcal ,if T the data infomation should be shown in the middle of the graph,otherwise the 
 #'   middle of the graph should be empty .
-#' @param char an character object to control the specific content shown in the middle of the graph,
-#'   the useful value only can be single character,a number,vector or other unuseful input will.
-#'   end up with default output: data$name.If you want to quote parameters here,use the Echarts expression:
-#'   char = "{b}:{c}" (details in http://echarts.baidu.com/)
-#' @param definenam logical whether use you own name to replace the default name:pie chart
-#' @param myname  object of you own name,if the param definenam is T,you can rename the garph by :
-#'    myname = "my new name".
 #' @param size an array of html widget width and height(either numeric pixels 
 #'   or percentage could be accepted): e.g. size = c(1024, 768).
 #' @param type an option of c("pie", "rose"), the pie type of diplay widgets.
@@ -94,9 +87,9 @@
 #' @examples
 #' x = runif(6)
 #' names(x) = LETTERS[1:6]
-#' ePie(x,reset_radius = c(80,120),showL = T,char = "{b}:{c}",definenam = T,myname = "detailgraph") 
+#' ePie(x,reset_radius = c(80,120),showL = T,char)
 ePie = function(dat, namevar=NULL, datavar=NULL, size = NULL,reset_radius = c(20,100),reset_center= c("50%",200),
-	showL=FALSE,char = "",definenam = FALSE,myname = "",type=c("pie", "rose"), roseType=c("radias", "area"),
+	showL=FALSE,type=c("pie", "rose"), roseType=c("radias", "area"),
 	theme = "default", title = NULL, subtitle = NULL, title.x = "center", title.y = "top", 
 	legend = TRUE, legend.x = "left", legend.y= "top", legend.orient="horizontal", 
 	toolbox = TRUE, toolbox.orient = "horizontal", toolbox.x = "right", toolbox.y = "top", 
@@ -157,21 +150,9 @@ ePie = function(dat, namevar=NULL, datavar=NULL, size = NULL,reset_radius = c(20
 	
 	#showLabelLine=showLabel
 	#now we don't support the multiple graph in one canvas
-	#we add some para to control the details of graph:
-	#definename is logit ,T means you can make your own name of the garph by 
-	#para "myname"
-	#rad1 and rad2 control the range of radius
-	#cen1 and cen2 control the range of center
-	#showL is logit to control if you want to show infomation in the middle of the "ring" graph
-	#char control the formatter in the label
-	if(definenam == FALSE){
-		temname = paste(type, "chart")
-	}else{
-		temname = myname
-	}
+
 	opt$series = list(
 		list(
-			name = temname,
 			type = "pie",
 			radius = reset_radius,
 			center = reset_center,
@@ -189,8 +170,7 @@ ePie = function(dat, namevar=NULL, datavar=NULL, size = NULL,reset_radius = c(20
 			label = list(
 			    normal = list(
 				    show = showL,
-				    position = 'center',
-				    formatter = char
+				    position = 'center'    
 			    ),
 			      emphasis = list(
 					 show = showL,
