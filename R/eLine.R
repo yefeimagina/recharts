@@ -198,6 +198,10 @@ eLine = function(dat, xvar=NULL, yvar=NULL, series=NULL, size = NULL, horiz = FA
 	)
 	chart = .addClass(chart, "eLine")
 	chart
+	ans = list(
+		da = opt$series
+		pl = chart
+	)
 }
 
 #' Create an HTML area charts widget using the ECharts(version:3.2.2) library
