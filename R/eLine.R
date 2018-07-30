@@ -318,7 +318,13 @@ eLine = function(dat, xvar=NULL, yvar=NULL, series=NULL, size = NULL, horiz = FA
 #' 
 eArea = function(size = NULL) 
 {
-	
+	dd = list(
+  list(
+    type = "line3D",
+    data = list(list(1,2,3),list(4,5,6),list(7,8,9)),
+    lineStyle = list( width = 4)
+  )
+)
 	
 opt = list(
  xAxis3D = list(type = "value"),
