@@ -351,5 +351,6 @@ opt = list(
 	chart = addThemeDependencies(chart)
 	
 	chart
+	return(opt)
 
 }
