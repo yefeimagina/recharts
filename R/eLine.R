@@ -330,6 +330,9 @@ opt = list(
  xAxis3D = list(type = "value"),
  yAxis3D = list(type = "value"),
  zAxis3D = list(type = "value"),
+ grid3D = list(
+   viewControl = list(projection  ='orthographic')
+ ),
  series = dd
   
 )
