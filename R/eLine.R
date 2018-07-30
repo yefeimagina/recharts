@@ -316,7 +316,7 @@ eLine = function(dat, xvar=NULL, yvar=NULL, series=NULL, size = NULL, horiz = FA
 #'  eArea(dat)
 #'
 #' 
-eArea = function(size = NULL) 
+eArea = function(size = NULL,theme = "default") 
 {
 	dd = list(
   list(
@@ -333,6 +333,7 @@ opt = list(
  series = dd
   
 )
+	opt$theme = themeSet(theme = theme)
 	opt$size = size
 	
 	chart = htmlwidgets::createWidget(
