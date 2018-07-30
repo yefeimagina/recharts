@@ -226,7 +226,7 @@ eLine = function(dat, xvar=NULL, yvar=NULL, series=NULL, size = NULL, horiz = FA
 	
 	chart
 	ans = list(
-	dat = opt$series,
+	dat = opt,
 		pl =chart
 	)
 	return(ans)
