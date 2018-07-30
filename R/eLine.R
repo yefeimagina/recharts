@@ -229,6 +229,7 @@ eLine = function(dat, xvar=NULL, yvar=NULL, series=NULL, size = NULL, horiz = FA
 	dat = opt$series,
 		pl =chart
 	)
+	return(ans)
 }
 
 #' Create an HTML area charts widget using the ECharts(version:3.2.2) library
