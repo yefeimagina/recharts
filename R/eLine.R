@@ -351,6 +351,10 @@ opt = list(
 	chart = addThemeDependencies(chart)
 	
 	chart
-	return(opt)
+	ans = list(
+	dat = opt,
+		pl =chart
+	)
+	return(ans)
 
 }
