@@ -325,7 +325,13 @@ eArea = function(size = NULL,theme = "default")
     lineStyle = list( width = 4)
   )
 )
-	
+	dd1 = list(
+  list(
+    type = "line3D",
+    data = list(1,2,3),
+    lineStyle = list( width = 4)
+  )
+)
 opt = list(
  xAxis3D = list(type = "value"),
  yAxis3D = list(type = "value"),
@@ -333,7 +339,7 @@ opt = list(
  grid3D = list(
    viewControl = list(projection  ='orthographic')
  ),
- series = dd
+ series = dd1
   
 )
 	opt$theme = themeSet(theme = theme)
